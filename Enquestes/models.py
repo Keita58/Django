@@ -1,7 +1,6 @@
 from django.db import models
 
 # Create your models here.
-Rols = ((0, 'Professor'), (1, 'Coordinador'))
 
 def django_enum(cls):
     # decorator needed to enable enums in django templates
@@ -10,7 +9,7 @@ def django_enum(cls):
 
 class Rol(models.Model):
     idRols = models.AutoField(primary_key=True)
-    nom = models.IntegerField(choices=Rols)
+    nom = models.CharField('nom', max_length=50)
     models.Model.do_not_call_in_templates = True
     def __str__(self):
         return str(self.idRols)

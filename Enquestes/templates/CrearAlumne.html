@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear alumne</title>
+</head>
+<body>
+    <form method="post" action="{% url 'crearPregunta' %}">
+        {% csrf_token %}
+        <h1>Crear pregunta</h1>
+        <div>
+            <label for="nomComplet" class="form-label">Nom de l'alumne: </label>
+            <input type="text" id="nomComplet" name="nomComplet" class="form-control" required>
+        </div>
+        <div>
+            <label for="img" class="form-label">Imatge de perfil: </label>
+            <input type="file" id="img" name="img" class="form-control" required>
+        </div>
+        <div>
+            <label for="questionari" class="form-label">Pot realitzar més qüestionaris?</label>
+            <input type="checkbox" id="questionari" name="questionari" class="form-control" required>
+        </div>
+        <div class="text-center">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</body>
+</html>

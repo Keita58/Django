@@ -17,16 +17,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Enquestes.views import RolsSeeder, LlistarRols, LoginView, LogoutView, SeederUsuari, LlistarQuestionaris, \
-    EditarQuestionari
+from Enquestes.views import LlistarRols, LoginView, LogoutView, LlistarQuestionaris, \
+    EditarQuestionari, EsborrarQuestionari, CrearQuestionari, EditarRol, EsborrarRol, CrearRol, LlistarPreguntes, \
+    EditarPregunta, EsborrarPregunta, CrearPregunta, LlistarAlumnes, EditarAlumne, EsborrarAlumne, CrearAlumne
 
 urlpatterns = [
-    path('', LoginView.as_view(), name='login'),
-    path('logout/', LogoutView.as_view(), name='logout'),
+    path('', LoginView.as_view(), name = 'login'),
+    path('logout/', LogoutView.as_view(), name = 'logout'),
     path('admin/', admin.site.urls),
-    path('rols/', LlistarRols.as_view()),
-    path('rols/add/<Nom>/', RolsSeeder.as_view()),
-    path('seederUsuari/', SeederUsuari.as_view()),
-    path('questionaris/', LlistarQuestionaris.as_view()),
-    path('questionaris/edit/<int:id>', EditarQuestionari.as_view(), name='editarQuestionari'),
+    path('rols/', LlistarRols.as_view(), name = 'llistarRols'),
+    path('rols/edit/<int:id>', EditarRol.as_view(), name = 'editarRol'),
+    path('rols/borrar/<int:id>', EsborrarRol.as_view(), name = 'esborrarRol'),
+    path('rols/add/', CrearRol.as_view(), name = 'crearRol'),
+    path('questionari/', LlistarQuestionaris.as_view(), name = 'llistaQuestionaris'),
+    path('questionari/edit/<int:id>', EditarQuestionari.as_view(), name = 'editarQuestionari'),
+    path('questionari/borrar/<int:id>', EsborrarQuestionari.as_view(), name = 'esborrarQuestionari'),
+    path('questionari/add', CrearQuestionari.as_view(), name = 'crearQuestionari'),
+    path('pregunta/', LlistarPreguntes.as_view(), name = 'llistaPreguntes'),
+    path('pregunta/edit/<int:id>', EditarPregunta.as_view(), name = 'editarPregunta'),
+    path('pregunta/borrar/<int:id>', EsborrarPregunta.as_view(), name = 'esborrarPregunta'),
+    path('pregunta/add', CrearPregunta.as_view(), name = 'crearPregunta'),
+    path('alumnes/', LlistarAlumnes.as_view(), name = 'llistaAlumnes'),
+    path('alumne/edit/<int:id>', EditarAlumne.as_view(), name = 'editarAlumne'),
+    path('alumne/borrar/<int:id>', EsborrarAlumne.as_view(), name = 'esborrarAlumne'),
+    path('alumne/add', CrearAlumne.as_view(), name = 'crearAlumne'),
 ]

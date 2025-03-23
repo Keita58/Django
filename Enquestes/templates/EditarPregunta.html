@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar pregunta</title>
+</head>
+<body>
+    <form method="post" action="{% url 'editarPregunta' pregunta.idPreguntes %}">
+        {% csrf_token %}
+        <h1>Actualitzar pregunta</h1>
+        <div>
+            <label for="descripcio" class="form-label">Pregunta: </label>
+            <input type="text" id="descripcio" name="descripcio" class="form-control" value="{{ pregunta.descripcio }}" required>
+        </div>
+        <div>
+            <label for="questionari" class="form-label">Qüestionari relacionat: </label>
+            <select name="questionari" id="questionari" class="form-select" required>
+                {% for questionari in questionaris %}
+                    <option value="{{ questionari.idQuestionaris }}">{{ questionari.idQuestionaris }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="text-center">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</body>
+</html>

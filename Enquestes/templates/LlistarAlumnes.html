@@ -5,6 +5,27 @@
     <title>Llista alumnes</title>
 </head>
 <body>
-
+    <table>
+        <tr>
+            <th>Id Alumne</th>
+            <th>Nom complet</th>
+            <th>Imatge</th>
+            <th>Pot realitzar més qüestionaris?</th>
+            <th>Accions</th>
+        </tr>
+        {% for alumne in alumnes %}
+            <tr>
+                <td>{{ alumne.idAlumnes }}</td>
+                <td>{{ alumne.nomComplet }}</td>
+                <td>{{ alumne.img }}</td>
+                <td>{{ alumne.questionari }}</td>
+                <td>
+                    <a target="_blank" href="{% url 'editarAlumne' alumne.idAlumnes %}"><button>Editar alumne</button></a>
+                    <a target="_blank" href="{% url 'esborrarAlumne' alumne.idAlumnes %}"><button>Eliminar alumne</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a target="_blank" href="{% url 'crearAlumne' %}"><button>Crear alumne</button></a>
 </body>
 </html>

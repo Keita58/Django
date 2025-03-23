@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar rol</title>
+</head>
+<body>
+    <form method="post" action="{% url 'editarRol' rol.idRols%}">
+        {% csrf_token %}
+        <h1>Actualitzar rol</h1>
+        <div>
+            <label for="nom" class="form-label">Nom del rol: </label>
+            <input type="text" id="nom" name="nom" class="form-control" value="{{ rol.nom }}" required>
+        </div>
+        <div class="text-center">
+            <button type="submit">Guardar</button>
+        </div>
+    </form>
+</body>
+</html>

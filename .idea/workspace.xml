@@ -5,17 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbe61436-825b-445e-b491-3098a30bf32b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enquestes/templates/EditarQuestionari.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarAlumnes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarPreguntes.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarQuestionaris.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/CrearPregunta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/CrearQuestionari.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/CrearRol.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/EditarAlumne.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/EditarPregunta.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/EditarRol.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bcf93795-4241-4fb6-a796-f6acaf5b5497.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/bcf93795-4241-4fb6-a796-f6acaf5b5497.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/migrations/0002_rename_questionari_preguntes_questionari.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/migrations/0003_rename_rols_rol.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/migrations/0004_rename_alumnes_alumne_rename_preguntes_pregunte_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/migrations/0005_auto_20250323_1112.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Enquestes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/templates/CreateRol.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/CrearAlumne.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/templates/EditarQuestionari.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/EditarQuestionari.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/templates/LlistarAlumnes.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarAlumnes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/templates/LlistarPreguntes.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarPreguntes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/templates/LlistarQuestionaris.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarQuestionaris.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Enquestes/templates/LlistarRols.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarRols.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Enquestes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/views.py" afterDir="false" />
     </list>
     <list id="17261e76-187f-474a-95a4-88e82293ceb2" name="Changes by hecto" comment="" />
@@ -47,24 +57,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Django" type="Python.DjangoServer" factoryName="Django server">
       <module name="Django" />
@@ -110,7 +120,9 @@
       <workItem from="1742635244296" duration="169000" />
       <workItem from="1742635426586" duration="42000" />
       <workItem from="1742655755599" duration="7044000" />
-      <workItem from="1742721774989" duration="8714000" />
+      <workItem from="1742721774989" duration="9453000" />
+      <workItem from="1742744830909" duration="356000" />
+      <workItem from="1742747389281" duration="7819000" />
     </task>
     <servers />
   </component>

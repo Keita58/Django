@@ -2,19 +2,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Editar qüestionari</title>
+    <title>Crear qüestionari</title>
 </head>
 <body>
-    <form method="post" action="{% url 'editarQuestionari' questionari.idQuestionaris%}">
+    <form method="post" action="{% url 'crearQuestionari' %}">
         {% csrf_token %}
-        <h1>Actualitzar qüestionari</h1>
+        <h1>Crear qüestionari</h1>
         <div>
             <label for="idEmpresa" class="form-label">Id Empresa: </label>
-            <input type="number" id="idEmpresa" name="idEmpresa" class="form-control" value="{{ questionari.idEmpresa }}" required>
+            <input type="number" id="idEmpresa" name="idEmpresa" class="form-control" required>
         </div>
         <div>
             <label for="descripcio" class="form-label">Descripció del qüestionari: </label>
-            <input type="text" id="descripcio" name="descripcio" class="form-control" value="{{ questionari.descripcio }}" required>
+            <input type="text" id="descripcio" name="descripcio" class="form-control" required>
         </div>
         <div class="text-center">
             <button type="submit">Guardar</button>

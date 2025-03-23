@@ -5,6 +5,25 @@
     <title>Llista preguntes</title>
 </head>
 <body>
-
+    <table>
+        <tr>
+            <th>Id Pregunta</th>
+            <th>Descripció</th>
+            <th>Id Qüestionari</th>
+            <th>Accions</th>
+        </tr>
+        {% for pregunta in preguntes %}
+            <tr>
+                <td>{{ pregunta.idPreguntes }}</td>
+                <td>{{ pregunta.descripcio }}</td>
+                <td>{{ pregunta.questionari }}</td>
+                <td>
+                    <a target="_blank" href="{% url 'editarPregunta' pregunta.idPreguntes %}"><button>Editar pregunta</button></a>
+                    <a target="_blank" href="{% url 'esborrarPregunta' pregunta.idPreguntes %}"><button>Eliminar pregunta</button></a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <a target="_blank" href="{% url 'crearPregunta' %}"><button>Crear pregunta</button></a>
 </body>
 </html>
