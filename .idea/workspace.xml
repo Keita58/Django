@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbe61436-825b-445e-b491-3098a30bf32b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Django.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Enquestes/templates/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/EditarQuestionari.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarAlumnes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarPreguntes.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarQuestionaris.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/templates/LlistarRols.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarRols.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/views.py" afterDir="false" />
     </list>
     <list id="17261e76-187f-474a-95a4-88e82293ceb2" name="Changes by hecto" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -47,6 +53,7 @@
     "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
@@ -102,7 +109,8 @@
       <updated>1742635243199</updated>
       <workItem from="1742635244296" duration="169000" />
       <workItem from="1742635426586" duration="42000" />
-      <workItem from="1742655755599" duration="6442000" />
+      <workItem from="1742655755599" duration="7044000" />
+      <workItem from="1742721774989" duration="8714000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Llista qüestionaris</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>id Questionari</th>
+            <th>id Empresa</th>
+            <th>Descripcio</th>
+            <th>Accions</th>
+        </tr>
+        {% for questionari in questionaris %}
+            <tr>
+                <td>{{ questionari.idQuestionaris }}</td>
+                <td>{{ questionari.idEmpresa }}</td>
+                <td>{{ questionari.descripctio }}</td>
+                <td>
+                    <a target="_blank" href="{% url 'editarQuestionari' questionari.idQuestionaris %}"><button>Editar qüestionari</button></a>
+                    <button>Eliminar qüestionari</button>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <button>Crear qüestionari</button>
+</body>
+</html>
