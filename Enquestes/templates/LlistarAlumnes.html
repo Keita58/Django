@@ -9,7 +9,6 @@
         <tr>
             <th>Id Alumne</th>
             <th>Nom complet</th>
-            <th>Imatge</th>
             <th>Pot realitzar més qüestionaris?</th>
             <th>Accions</th>
         </tr>
@@ -17,7 +16,6 @@
             <tr>
                 <td>{{ alumne.idAlumnes }}</td>
                 <td>{{ alumne.nomComplet }}</td>
-                <td>{{ alumne.img }}</td>
                 <td>{{ alumne.questionari }}</td>
                 <td>
                     <a target="_blank" href="{% url 'editarAlumne' alumne.idAlumnes %}"><button>Editar alumne</button></a>

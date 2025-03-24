@@ -1,13 +1,10 @@
 from django.contrib import admin
 from django.contrib.admin import ModelAdmin
 
-from Enquestes.models import Rol, Questionari, Pregunte, Alumne
+from Enquestes.models import Questionari, Pregunte, Alumne
 
 
 # Register your models here.
-class RolAdmin(ModelAdmin):
-    pass
-
 class QuestionAdmin(ModelAdmin):
     pass
 
@@ -17,7 +14,9 @@ class PreguntesAdmin(ModelAdmin):
 class AlumneAdmin(ModelAdmin):
     pass
 
-admin.site.register(Rol, ModelAdmin)
-admin.site.register(Questionari, RolAdmin)
+class UsuariAdmin(ModelAdmin):
+    pass
+
+admin.site.register(Questionari, QuestionAdmin)
 admin.site.register(Pregunte, PreguntesAdmin)
 admin.site.register(Alumne, AlumneAdmin)

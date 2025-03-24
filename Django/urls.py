@@ -17,18 +17,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from Enquestes.views import LlistarRols, LoginView, LogoutView, LlistarQuestionaris, \
-    EditarQuestionari, EsborrarQuestionari, CrearQuestionari, EditarRol, EsborrarRol, CrearRol, LlistarPreguntes, \
+from Enquestes.views import LlistarQuestionaris, \
+    EditarQuestionari, EsborrarQuestionari, CrearQuestionari, LlistarPreguntes, \
     EditarPregunta, EsborrarPregunta, CrearPregunta, LlistarAlumnes, EditarAlumne, EsborrarAlumne, CrearAlumne
+from users.views import LoginView, LogoutView
 
 urlpatterns = [
     path('', LoginView.as_view(), name = 'login'),
     path('logout/', LogoutView.as_view(), name = 'logout'),
     path('admin/', admin.site.urls),
-    path('rols/', LlistarRols.as_view(), name = 'llistarRols'),
-    path('rols/edit/<int:id>', EditarRol.as_view(), name = 'editarRol'),
-    path('rols/borrar/<int:id>', EsborrarRol.as_view(), name = 'esborrarRol'),
-    path('rols/add/', CrearRol.as_view(), name = 'crearRol'),
     path('questionari/', LlistarQuestionaris.as_view(), name = 'llistaQuestionaris'),
     path('questionari/edit/<int:id>', EditarQuestionari.as_view(), name = 'editarQuestionari'),
     path('questionari/borrar/<int:id>', EsborrarQuestionari.as_view(), name = 'esborrarQuestionari'),

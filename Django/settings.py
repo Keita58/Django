@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Enquestes',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -128,4 +129,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_URL='Enquestes:login'
+LOGIN_URL='users:login'
