@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'enquestesdjango',
+        'NAME': 'enquestes',
         'USER': 'root',
         'PASSWORD': 'super3',
         'HOST': 'localhost',

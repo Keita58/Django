@@ -18,12 +18,12 @@
                 <td>{{ questionari.idEmpresa }}</td>
                 <td>{{ questionari.descripcio }}</td>
                 <td>
-                    <a target="_blank" href="{% url 'editarQuestionari' questionari.idQuestionaris %}"><button>Editar qüestionari</button></a>
-                    <a target="_blank" href="{% url 'esborrarQuestionari' questionari.idQuestionaris %}"><button>Eliminar qüestionari</button></a>
+                    <button onclick="location.href='{% url 'editarQuestionari' questionari.idQuestionaris %}'">Editar qüestionari</button>
+                    <button onclick="location.href='{% url 'esborrarQuestionari' questionari.idQuestionaris %}'">Eliminar qüestionari</button>
                 </td>
             </tr>
         {% endfor %}
     </table>
-    <a target="_blank" href="{% url 'crearQuestionari' %}"><button>Crear qüestionari</button></a>
+    <button onclick="location.href='{% url 'crearQuestionari' %}'">Crear qüestionari</button>
 </body>
 </html>

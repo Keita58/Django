@@ -18,12 +18,12 @@
                 <td>{{ alumne.nomComplet }}</td>
                 <td>{{ alumne.questionari }}</td>
                 <td>
-                    <a target="_blank" href="{% url 'editarAlumne' alumne.idAlumnes %}"><button>Editar alumne</button></a>
-                    <a target="_blank" href="{% url 'esborrarAlumne' alumne.idAlumnes %}"><button>Eliminar alumne</button></a>
+                    <button onclick="location.href='{% url 'editarAlumne' alumne.idAlumnes %}'">Editar alumne</button>
+                    <button onclick="location.href='{% url 'esborrarAlumne' alumne.idAlumnes %}'">Eliminar alumne</button>
                 </td>
             </tr>
         {% endfor %}
     </table>
-    <a target="_blank" href="{% url 'crearAlumne' %}"><button>Crear alumne</button></a>
+    <button onclick="location.href='{% url 'crearAlumne' %}'">Crear alumne</button>
 </body>
 </html>

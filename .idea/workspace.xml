@@ -4,29 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bbe61436-825b-445e-b491-3098a30bf32b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/users/templates/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Django.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Django.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/bcf93795-4241-4fb6-a796-f6acaf5b5497.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/migrations/0002_auto_20250323_1836.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/templates/CrearAlumne.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/CrearAlumne.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/templates/LlistarAlumnes.html" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/templates/LlistarAlumnes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="bbe61436-825b-445e-b491-3098a30bf32b" name="Changes" comment="" />
     <list id="17261e76-187f-474a-95a4-88e82293ceb2" name="Changes by hecto" comment="" />
-    <list id="141bff99-b712-45ab-adb8-af8c669feb38" name="Changes by ies" comment="">
-      <change beforePath="$PROJECT_DIR$/Django/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Enquestes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/users/templates/login.html" afterDir="false" />
-    </list>
+    <list id="141bff99-b712-45ab-adb8-af8c669feb38" name="Changes by ies" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,26 +18,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/Enquestes/models.py">
-      <ranges>
-        <range start1="0" end1="0" start2="0" end2="1" changelist="bbe61436-825b-445e-b491-3098a30bf32b" />
-        <range start1="1" end1="1" start2="2" end2="3" changelist="bbe61436-825b-445e-b491-3098a30bf32b" />
-        <range start1="2" end1="2" start2="4" end2="5" changelist="141bff99-b712-45ab-adb8-af8c669feb38" />
-        <range start1="9" end1="16" start2="12" end2="12" changelist="bbe61436-825b-445e-b491-3098a30bf32b" />
-        <range start1="33" end1="34" start2="29" end2="29" changelist="bbe61436-825b-445e-b491-3098a30bf32b" />
-        <range start1="35" end1="35" start2="30" end2="32" changelist="141bff99-b712-45ab-adb8-af8c669feb38" />
-        <range start1="38" end1="39" start2="35" end2="44" changelist="bbe61436-825b-445e-b491-3098a30bf32b" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -68,25 +35,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.pycharm.django.structure.promotion.once.per.project": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.pycharm.django.structure.promotion.once.per.project&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/ProjectesExtra/AccesADades/Django&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\ProjectesExtra\AccesADades\Django\users\template" />
@@ -141,7 +109,11 @@
       <workItem from="1742721774989" duration="9453000" />
       <workItem from="1742744830909" duration="356000" />
       <workItem from="1742747389281" duration="7906000" />
-      <workItem from="1742827448634" duration="11479000" />
+      <workItem from="1742827448634" duration="11744000" />
+      <workItem from="1742911706862" duration="940000" />
+      <workItem from="1742912671699" duration="5962000" />
+      <workItem from="1743092630732" duration="2743000" />
+      <workItem from="1743174799496" duration="6931000" />
     </task>
     <servers />
   </component>

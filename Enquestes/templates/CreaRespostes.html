@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crea respostes</title>
+</head>
+<body>
+    <form method="post" action="{% url 'creaRespostesQuestionari' %}">
+        {% csrf_token %}
+        <h1>Crear respostes</h1>
+        <div>
+            <label for="alumne" class="form-label">Nom de l'alumne: </label>
+            <select name="alumne" id="alumne" class="form-select" required>
+                {% for alumne in alumnes %}
+                    <option value="{{ alumne.idAlumnes }}">{{ alumne.nomComplet }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="questionari" class="form-label">Qüestionari al que està relacionat: </label>
+            <select name="questionari" id="questionari" class="form-select" required>
+                {% for questionari in questionaris %}
+                    <option value="{{ questionari.idQuestionaris }}">{{ questionari.idQuestionaris }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div>
+            <label for="profe" class="form-label">Professor que respondrà: </label>
+            <select name="profe" id="profe" class="form-select" required>
+                {% for profe in profes %}
+                    <option value="{{ profe.id }}">{{ profe }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="text-center">
+            <button type="submit">Crear</button>
+        </div>
+    </form>
+</body>
+</html>
