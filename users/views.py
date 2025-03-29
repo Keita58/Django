@@ -51,7 +51,7 @@ class LoginView(View):
         if user is not None:
             # Mètode de django que obre una sessió d'usuari
             login(request, user)
-            return redirect('')
+            return redirect('login')
         # Fem aquest return per permetre tornar a fer login
         return self.get(request)
 
