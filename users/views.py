@@ -7,7 +7,10 @@ from django.views import View
 # Create your views here.
 class LoginView(View):
     def get(self, request):
-        return render(request, 'login.html')
+        if request.user.is_authenticated:
+            return render(request, 'Inici.html')
+        else:
+            return render(request, 'login.html')
 
     def post(self, request):
         # Mètode autenticate -> serveix per autenticar.
@@ -27,4 +30,4 @@ class LogoutView(View):
     def get(self, request):
         if request.user.is_authenticated:
             logout(request)
-        return redirect('users:login')
+        return redirect('login')

@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
         Pregunta.objects.create(descripcio='Pregunta de prova', questionari_id=1)
 
     def create_user(apps, schema_editor):
-        # python manage.py makemigrations --empty Prova1
+        # python manage.py makemigrations --empty Enquestes
         User.objects.create_user(username='eloi', password='super3', email='eloi@correu.cat')
         User.objects.create_user(username='hector', password='super3', email='hector@correu.cat')
         Group.objects.get_or_create(name='Professor')

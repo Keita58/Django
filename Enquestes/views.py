@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import permission_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
@@ -114,7 +115,7 @@ class CrearPregunta(View):
 
 
 #Classes pels alumnes
-class LlistarAlumnes(View):
+class LlistarAlumnes(LoginRequiredMixin, View):
     def get(self, request):
         context = {
             "alumnes":
@@ -123,7 +124,7 @@ class LlistarAlumnes(View):
         return render(request, 'LlistarAlumnes.html', context)
 
 
-class EditarAlumne(View):
+class EditarAlumne(LoginRequiredMixin, View):
     def get(self, request, id):
         context = {
             "alumne":
@@ -139,14 +140,14 @@ class EditarAlumne(View):
         return redirect('llistaAlumnes')
 
 
-class EsborrarAlumne(View):
+class EsborrarAlumne(LoginRequiredMixin, View):
     def get(self, request, id):
         alumne = Alumne.objects.get(idAlumnes=id)
         alumne.delete()
         return redirect('llistaAlumnes')
 
 
-class CrearAlumne(View):
+class CrearAlumne(LoginRequiredMixin, View):
     def get(self, request):
         return render(request, 'CrearAlumne.html')
 
@@ -157,7 +158,7 @@ class CrearAlumne(View):
 
 
 #Adreces compostes
-class CreaRespostesQuestionari(View):
+class CreaRespostesQuestionari(LoginRequiredMixin, View):
     def get(self, request):
         context = {
             "alumnes": Alumne.objects.all(),
@@ -175,31 +176,57 @@ class CreaRespostesQuestionari(View):
         return redirect('creaRespostesQuestionari')
 
 
-class RespondreRespostesQuestionari(View):
+class RespondreRespostesQuestionari(LoginRequiredMixin, View):
     def get(self, request):
-        return render(request, 'RespondreRespostes.html')
+        context = {
+            "alumnes": Alumne.objects.all(),
+            "questionaris": Questionari.objects.all(),
+            "profes": User.objects.all()
+        }
+        return render(request, 'RespondreRespostes.html', context)
 
     def post(self, request):
         respostes = []
         preguntes = Pregunte.objects.filter(questionari=request.POST.get("questionari"))
+        preguntesHtml = []
         for pregunta in preguntes:
             respostes.append(
                 get_object_or_404(Resposte, idProfessor=get_object_or_404(User, id=request.POST.get("profe")),
                                   idAlumne=get_object_or_404(Alumne, idAlumnes=request.POST.get("alumne")),
                                   idPregunta=pregunta))
+            preguntesHtml.append(pregunta)
         context = {
             "respostes": respostes,
-            "preguntes": preguntes
+            "preguntes": preguntesHtml,
+            "idalumne": request.POST.get("alumne"),
+            "idquestionari": request.POST.get("questionari"),
+            "idprofe": request.POST.get("profe"),
         }
         return render(request, 'RespondreRespostesForm.html', context)
 
 
-class RespondreRespostesForm(View):
-    def post(self, request):
-        pass
+class RespondreRespostesForm(LoginRequiredMixin, View):
+    def post(self, request, idAlumne, idQuestionari, idProfe):
+        preguntes = Pregunte.objects.filter(questionari=idQuestionari)
+        for pregunta in preguntes:
+            resposta = get_object_or_404(Resposte, idProfessor=get_object_or_404(User, id=idProfe),
+                                         idAlumne=get_object_or_404(Alumne, idAlumnes=idAlumne),
+                                         idPregunta=pregunta)
+            resposta.valoracio = request.POST.get("valoracio"+str(pregunta))
+            resposta.save()
+        return redirect('respondreRespostesQuestionari')
 
 
-class TancarQuestionariAlumne(View):
+
+class TancarQuestionariAlumne(LoginRequiredMixin, View):
+    def get(self, request):
+        context = {
+            "alumnes": Alumne.objects.all(),
+            "questionaris": Questionari.objects.all(),
+            "profes": User.objects.all()
+        }
+        return render(request, 'TancarRespostesQuestionari.html', context)
+
     def post(self, request):
         preguntes = Pregunte.objects.filter(questionari=request.POST.get("questionari"))
         for pregunta in preguntes:
@@ -208,4 +235,4 @@ class TancarQuestionariAlumne(View):
                                          idPregunta=pregunta)
             resposta.tancar = True
             resposta.save()
-        return render(request, 'TancarRespostesQuestionari.html')
+        return redirect('tancarQuestionariAlumne')

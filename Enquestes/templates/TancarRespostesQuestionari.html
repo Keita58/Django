@@ -7,7 +7,7 @@
 <body>
     <form method="post" action="{% url 'tancarQuestionariAlumne' %}">
         {% csrf_token %}
-        <h1>Crear respostes</h1>
+        <h1>Tancar respostes</h1>
         <div>
             <label for="alumne" class="form-label">Nom de l'alumne: </label>
             <select name="alumne" id="alumne" class="form-select" required>
@@ -33,7 +33,7 @@
             </select>
         </div>
         <div class="text-center">
-            <button type="submit">Crear</button>
+            <button type="submit">Tancar</button>
         </div>
     </form>
 </body>

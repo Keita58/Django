@@ -43,5 +43,5 @@ urlpatterns = [
     path('preguntaalumne', CreaRespostesQuestionari.as_view(), name='creaRespostesQuestionari'),
     path('alumneresposta', RespondreRespostesQuestionari.as_view(), name='respondreRespostesQuestionari'),
     path('alumnequestionaritancar', TancarQuestionariAlumne.as_view(), name='tancarQuestionariAlumne'),
-    path('respondrerespostes', RespondreRespostesForm.as_view(), name='respondreRespostesForm')
+    path('respondrerespostes/<int:idAlumne>/<int:idQuestionari>/<int:idProfe>', RespondreRespostesForm.as_view(), name='respondreRespostesForm')
 ]
