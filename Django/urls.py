@@ -20,7 +20,8 @@ from django.urls import path
 from Enquestes.views import LlistarQuestionaris, \
     EditarQuestionari, EsborrarQuestionari, CrearQuestionari, LlistarPreguntes, \
     EditarPregunta, EsborrarPregunta, CrearPregunta, LlistarAlumnes, EditarAlumne, EsborrarAlumne, CrearAlumne, \
-    CreaRespostesQuestionari, RespondreRespostesQuestionari, TancarQuestionariAlumne, RespondreRespostesForm
+    CreaRespostesQuestionari, RespondreRespostesQuestionari, TancarQuestionariAlumne, RespondreRespostesForm, \
+    SensePermisos
 from users.views import LoginView, LogoutView
 
 urlpatterns = [
@@ -43,5 +44,6 @@ urlpatterns = [
     path('preguntaalumne', CreaRespostesQuestionari.as_view(), name='creaRespostesQuestionari'),
     path('alumneresposta', RespondreRespostesQuestionari.as_view(), name='respondreRespostesQuestionari'),
     path('alumnequestionaritancar', TancarQuestionariAlumne.as_view(), name='tancarQuestionariAlumne'),
-    path('respondrerespostes/<int:idAlumne>/<int:idQuestionari>/<int:idProfe>', RespondreRespostesForm.as_view(), name='respondreRespostesForm')
+    path('respondrerespostes/<int:idAlumne>/<int:idQuestionari>/<int:idProfe>', RespondreRespostesForm.as_view(), name='respondreRespostesForm'),
+    path('sensepermisos/', SensePermisos.as_view(), name='sensePermisos'),
 ]

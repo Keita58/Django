@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bbe61436-825b-445e-b491-3098a30bf32b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Enquestes/templates/SensePermisos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Django/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Enquestes/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Enquestes/views.py" afterDir="false" />
     </list>
     <list id="17261e76-187f-474a-95a4-88e82293ceb2" name="Changes by hecto" comment="" />
     <list id="141bff99-b712-45ab-adb8-af8c669feb38" name="Changes by ies" comment="" />
@@ -119,6 +121,7 @@
       <workItem from="1743174799496" duration="6931000" />
       <workItem from="1743245351245" duration="12161000" />
       <workItem from="1743267878255" duration="196000" />
+      <workItem from="1743317571457" duration="2886000" />
     </task>
     <servers />
   </component>

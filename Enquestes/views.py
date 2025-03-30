@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import permission_required
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.models import User, Group
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils.decorators import method_decorator
@@ -10,108 +10,131 @@ from django.views.generic.base import View
 from Enquestes.models import Questionari, Pregunte, Alumne, Resposte
 
 
-@method_decorator(permission_required(perm='Coordinador'), name='get')
 # Classes pels qüestionaris
-class LlistarQuestionaris(View):
+class LlistarQuestionaris(LoginRequiredMixin, View):
     def get(self, request):
-        context = {
-            "questionaris":
-                list(Questionari.objects.all())
-        }
-        return render(request, 'LlistarQuestionaris.html', context)
+        if request.user.groups.filter(name="Coordinador").exists():
+            context = {
+                "questionaris":
+                    list(Questionari.objects.all())
+            }
+            return render(request, 'LlistarQuestionaris.html', context)
+        else:
+            return redirect('sensePermisos')
 
 
-@method_decorator(permission_required(perm='Coordinador'), name='get')
-@method_decorator(permission_required(perm='Coordinador'), name='post')
-class EditarQuestionari(View):
+class EditarQuestionari(LoginRequiredMixin, View):
     def get(self, request, id):
-        context = {
-            "questionari":
-                Questionari.objects.get(idQuestionaris=id)
-        }
-        return render(request, 'EditarQuestionari.html', context)
+        if request.user.groups.filter(name="Coordinador").exists():
+            context = {
+                "questionari":
+                    Questionari.objects.get(idQuestionaris=id)
+            }
+            return render(request, 'EditarQuestionari.html', context)
+        else:
+            return redirect('sensePermisos')
 
     def post(self, request, id):
-        questionari = get_object_or_404(Questionari, idQuestionaris=id)
-        questionari.idEmpresa = request.POST.get('idEmpresa')
-        questionari.descripcio = request.POST.get('descripcio')
-        questionari.save()
-        return redirect('llistaQuestionaris')
+        if request.user.groups.filter(name="Coordinador").exists():
+            questionari = get_object_or_404(Questionari, idQuestionaris=id)
+            questionari.idEmpresa = request.POST.get('idEmpresa')
+            questionari.descripcio = request.POST.get('descripcio')
+            questionari.save()
+            return redirect('llistaQuestionaris')
+        else:
+            return redirect('sensePermisos')
 
 
-@method_decorator(permission_required(perm='Coordinador'), name='get')
-class EsborrarQuestionari(View):
+class EsborrarQuestionari(LoginRequiredMixin, View):
     def get(self, request, id):
-        questionari = Questionari.objects.get(idQuestionaris=id)
-        questionari.delete()
-        return redirect('llistaQuestionaris')
+        if request.user.groups.filter(name="Coordinador").exists():
+            questionari = Questionari.objects.get(idQuestionaris=id)
+            questionari.delete()
+            return redirect('llistaQuestionaris')
+        else:
+            return redirect('sensePermisos')
 
 
-@method_decorator(permission_required(perm='Coordinador'), name='get')
-@method_decorator(permission_required(perm='Coordinador'), name='post')
-class CrearQuestionari(View):
+class CrearQuestionari(LoginRequiredMixin, View):
     def get(self, request):
-        return render(request, 'CrearQuestionari.html')
+        if request.user.groups.filter(name="Coordinador").exists():
+            return render(request, 'CrearQuestionari.html')
+        else:
+            return redirect('sensePermisos')
 
     def post(self, request):
-        Questionari.objects.create(idEmpresa=request.POST.get('idEmpresa'), descripcio=request.POST.get('descripcio'))
-        return redirect('llistaQuestionaris')
+        if request.user.groups.filter(name="Coordinador").exists():
+            Questionari.objects.create(idEmpresa=request.POST.get('idEmpresa'), descripcio=request.POST.get('descripcio'))
+            return redirect('llistaQuestionaris')
+        else:
+            return redirect('sensePermisos')
 
 
 #Classes per les preguntes
-@method_decorator(permission_required(perm='Coordinador'), name='get')
-class LlistarPreguntes(View):
+class LlistarPreguntes(LoginRequiredMixin, View):
     def get(self, request):
-        context = {
-            "preguntes":
-                list(Pregunte.objects.all())
-        }
-        return render(request, 'LlistarPreguntes.html', context)
+        if request.user.groups.filter(name="Coordinador").exists():
+            context = {
+                "preguntes":
+                    list(Pregunte.objects.all())
+            }
+            return render(request, 'LlistarPreguntes.html', context)
+        else:
+            return redirect('sensePermisos')
 
 
-@method_decorator(permission_required(perm='Coordinador'), name='get')
-@method_decorator(permission_required(perm='Coordinador'), name='post')
-class EditarPregunta(View):
+class EditarPregunta(LoginRequiredMixin, View):
     def get(self, request, id):
-        context = {
-            "pregunta":
-                Pregunte.objects.get(idPreguntes=id),
-            "questionaris":
-                Questionari.objects.all()
-        }
-        return render(request, 'EditarPregunta.html', context)
+        if request.user.groups.filter(name="Coordinador").exists():
+            context = {
+                "pregunta":
+                    Pregunte.objects.get(idPreguntes=id),
+                "questionaris":
+                    Questionari.objects.all()
+            }
+            return render(request, 'EditarPregunta.html', context)
+        else:
+            return redirect('sensePermisos')
 
     def post(self, request, id):
-        pregunta = get_object_or_404(Pregunte, idPreguntes=id)
-        pregunta.descripcio = request.POST.get('descripcio')
-        questionari = Questionari.objects.get(idQuestionaris=request.POST.get('questionari'))
-        pregunta.questionari = questionari
-        pregunta.save()
-        return redirect('llistaPreguntes')
+        if request.user.groups.filter(name="Coordinador").exists():
+            pregunta = get_object_or_404(Pregunte, idPreguntes=id)
+            pregunta.descripcio = request.POST.get('descripcio')
+            questionari = Questionari.objects.get(idQuestionaris=request.POST.get('questionari'))
+            pregunta.questionari = questionari
+            pregunta.save()
+            return redirect('llistaPreguntes')
+        else:
+            return redirect('sensePermisos')
 
-
-@method_decorator(permission_required(perm='Coordinador'), name='get')
-class EsborrarPregunta(View):
+class EsborrarPregunta(LoginRequiredMixin, View):
     def get(self, request, id):
-        pregunta = Pregunte.objects.get(idPreguntes=id)
-        pregunta.delete()
-        return redirect('llistaPreguntes')
+        if request.user.groups.filter(name="Coordinador").exists():
+            pregunta = Pregunte.objects.get(idPreguntes=id)
+            pregunta.delete()
+            return redirect('llistaPreguntes')
+        else:
+            return redirect('sensePermisos')
 
 
-@method_decorator(permission_required(perm='Coordinador'), name='get')
-@method_decorator(permission_required(perm='Coordinador'), name='post')
-class CrearPregunta(View):
+class CrearPregunta(LoginRequiredMixin, View):
     def get(self, request):
-        context = {
-            "questionaris":
-                list(Questionari.objects.all())
-        }
-        return render(request, 'CrearPregunta.html', context)
+        if request.user.groups.filter(name="Coordinador").exists():
+            context = {
+                "questionaris":
+                    list(Questionari.objects.all())
+            }
+            return render(request, 'CrearPregunta.html', context)
+        else:
+            return redirect('sensePermisos')
 
     def post(self, request):
-        Pregunte.objects.create(descripcio=request.POST.get('descripcio'),
-                                questionari=Questionari.objects.get(idQuestionaris=request.POST.get('questionari')))
-        return redirect('llistaPreguntes')
+        if request.user.groups.filter(name="Coordinador").exists():
+            Pregunte.objects.create(descripcio=request.POST.get('descripcio'),
+                                    questionari=Questionari.objects.get(idQuestionaris=request.POST.get('questionari')))
+            return redirect('llistaPreguntes')
+        else:
+            return redirect('sensePermisos')
 
 
 #Classes pels alumnes
@@ -236,3 +259,8 @@ class TancarQuestionariAlumne(LoginRequiredMixin, View):
             resposta.tancar = True
             resposta.save()
         return redirect('tancarQuestionariAlumne')
+
+#Error: sense permisos
+class SensePermisos(LoginRequiredMixin, View):
+    def get(self, request):
+        return render(request, 'SensePermisos.html')
